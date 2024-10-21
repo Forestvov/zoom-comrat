@@ -23,7 +23,9 @@ const SwipeableComponent: React.FC = () => {
     const handleTouchMove = (e: React.TouchEvent) => {
         if (touchStartY.current !== null) {
             const touch = e.touches[0];
-            setOffset(touch.clientY - touchStartY.current);
+            if (touch.clientY < touchStartY.current) {
+                setOffset(touch.clientY - touchStartY.current);
+            }
         }
     };
 
@@ -51,7 +53,9 @@ const SwipeableComponent: React.FC = () => {
                     <Logo />
                 </div>
                 <div className={s.bottom}>
-                    <h1 className={s.title}>Открыть меню</h1>
+                    <h1 className={s.title} onClick={hideLockScreen}>
+                        Открыть меню
+                    </h1>
                     <p className={s.text}>Здесь начинается настоящий релакс</p>
                     <button onClick={hideLockScreen}>
                         <CircleArrow />
