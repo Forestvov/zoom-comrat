@@ -13,7 +13,10 @@ const Menu = () => {
     const [langId, setLangId] = useState<number | null>(null);
     const [currentCategory, setCurrentCategory] = useState<null | number>(null);
 
-    const { categories, currentCategoryId, items } = useGetCategoriesAndItems(langId, currentCategory);
+    const { categories, currentCategoryId, items, currentCategoryName } = useGetCategoriesAndItems(
+        langId,
+        currentCategory
+    );
 
     useEffect(() => {
         const id = getCookie('langId');
@@ -26,8 +29,9 @@ const Menu = () => {
     return (
         <div className={s.menu} id="menu">
             <MenuHeader setLang={setLangId} />
-            <MenuSelector />
+            <MenuSelector currentCategoryName={currentCategoryName} />
             <MenuList
+                currentCategoryName={currentCategoryName}
                 categories={categories}
                 currentCategory={currentCategory ?? currentCategoryId}
                 items={items}

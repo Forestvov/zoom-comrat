@@ -28,6 +28,10 @@ export function useGetCategoriesAndItems(langId: number | null, categoryId?: num
     const categories = categoriesData?.content || [];
     const currentCategoryId = categories[0]?.menuCategoryId || 0;
 
+    const currentCategoryName = categoryId
+        ? categories?.find((category) => category.menuCategoryId === categoryId)?.value || ''
+        : categories[0]?.value;
+
     const {
         data: itemsData,
         isLoading: itemsLoading,
@@ -69,6 +73,7 @@ export function useGetCategoriesAndItems(langId: number | null, categoryId?: num
         update,
         currentCategoryId: categoryId ?? currentCategoryId,
         categoriesLoading,
+        currentCategoryName,
         items,
         itemsLoading,
     };

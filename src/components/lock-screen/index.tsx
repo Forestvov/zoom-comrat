@@ -9,7 +9,7 @@ import CircleArrow from 'assets/circle-arrow.svg?react';
 const SwipeableComponent: React.FC = () => {
     const [offset, setOffset] = useState<number>(0);
     const touchStartY = useRef<number | null>(null);
-    const swipeThreshold = window.innerHeight * 0.3;
+    const swipeThreshold = window.innerHeight * 0.2;
 
     const animation = useSpring({
         to: { transform: `translateY(${offset}px)` },

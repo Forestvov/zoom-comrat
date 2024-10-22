@@ -1,6 +1,11 @@
 import s from './menu-selector.module.scss';
+import { FC } from 'react';
 
-const MenuSelector = () => {
+interface Props {
+    currentCategoryName: string;
+}
+
+const MenuSelector: FC<Props> = ({ currentCategoryName }) => {
     // const [isOpen, setIsOpen] = useState(false);
     //
     // const ref = useRef(null);
@@ -16,7 +21,7 @@ const MenuSelector = () => {
         <div className={s.wrapper}>
             <div className={s.drop}>
                 <div className={s.head}>
-                    <span>ЗАКУСКИ</span>
+                    <span>{currentCategoryName}</span>
                     {/*<Arrow />*/}
                 </div>
                 {/*<animated.div className={s.list} style={animation}>*/}

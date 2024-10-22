@@ -9,9 +9,10 @@ interface Props {
     items: IItem[];
     currentCategory: number;
     selectCategoryId: (id: number) => void;
+    currentCategoryName: string;
 }
 
-const MenuList: FC<Props> = ({ categories, items, currentCategory, selectCategoryId }) => {
+const MenuList: FC<Props> = ({ categories, items, currentCategory, selectCategoryId, currentCategoryName }) => {
     return (
         <div className={s.wrapper}>
             <div className={s.tabs}>
@@ -25,7 +26,7 @@ const MenuList: FC<Props> = ({ categories, items, currentCategory, selectCategor
                     </button>
                 ))}
             </div>
-            <div className={s.title}>Закуски</div>
+            <div className={s.title}>{currentCategoryName}</div>
             <ul className={s.list}>
                 {items.map((item) => (
                     <li key={item.menuItemId}>
@@ -33,7 +34,7 @@ const MenuList: FC<Props> = ({ categories, items, currentCategory, selectCategor
                             <div className={s.name}>{item.menuItemLanguageValue}</div>
                             <div className={s.del} />
                             <div className={s.values}>
-                                <div className={s.value}>{item.menuItemSizeValue} г</div>
+                                <div className={s.value}>{item.menuItemSizeValue}</div>
                                 <div className={s.price}>{item.price} mdl</div>
                             </div>
                         </div>
