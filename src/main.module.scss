@@ -67,7 +67,17 @@ img {
   src: local('Gilroy-Medium'), url(./fonts/Gilroy-Medium.ttf) format('truetype');
 }
 
-.container {
-  width: 380px;
-  margin: 0 auto;
+@font-face {
+  font-family: 'SFProText-Light';
+  src: local('SFProText-Light'), url(./fonts/SFProText-Light.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'SFProText-Regular';
+  src: local('SFProText-Regular'), url(./fonts/SFProText-Regular.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'SFProText-Medium';
+  src: local('SFProText-Medium'), url(./fonts/SFProText-Medium.ttf) format('truetype');
 }
