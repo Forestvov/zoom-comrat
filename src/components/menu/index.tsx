@@ -6,7 +6,7 @@ import s from './menu.module.scss';
 
 const Menu = () => {
     return (
-        <div className={s.menu}>
+        <div className={s.menu} id="menu">
             <MenuHeader />
             <MenuSelector />
             <MenuList />

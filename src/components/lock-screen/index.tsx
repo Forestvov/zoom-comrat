@@ -29,7 +29,14 @@ const SwipeableComponent: React.FC = () => {
         }
     };
 
-    const hideLockScreen = () => setOffset(-window.innerHeight);
+    const hideLockScreen = () => {
+        const menu = document.getElementById('menu');
+        if (menu) {
+            setOffset(-window.innerHeight);
+            menu.style.opacity = '1';
+            document.body.style.overflow = 'auto';
+        }
+    };
 
     const handleTouchEnd = () => {
         if (Math.abs(offset) > swipeThreshold) {
