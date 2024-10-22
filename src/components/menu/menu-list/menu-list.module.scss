@@ -9,7 +9,8 @@
   margin-bottom: 50px;
 
   button {
-    font-family: 'SFProText-Regular', 'sans-serif';
+    font-family: 'SFProText', 'sans-serif';
+    font-weight: 400;
     font-size: 14px;
     text-transform: uppercase;
     color: #F4F4F4;
@@ -27,9 +28,9 @@
 }
 
 .title {
-  font-family: 'SFProText-Light', 'sans-serif';
-  margin-bottom: 21px;
+  font-family: 'SFProText', 'sans-serif';
   font-weight: 300;
+  margin-bottom: 21px;
   font-size: 20px;
   line-height: 22px;
   letter-spacing: -0.408px;
@@ -38,7 +39,7 @@
 }
 
 .list {
-  font-family: 'SFProText-Light', 'sans-serif';
+  font-family: 'SFProText', 'sans-serif';
   font-weight: 300;
 
   li {
@@ -59,6 +60,8 @@
   font-size: 16px;
   line-height: 22px;
   letter-spacing: -0.408px;
+  font-family: 'SFProText', 'sans-serif';
+  font-weight: 300;
 }
 
 .values {

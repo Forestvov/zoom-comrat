@@ -8,6 +8,31 @@ Then SVG files can be imported as React components:
 import Logo from "./logo.svg?react";
 ```
 
+## Add Custom Fonts
+
+Edit `vite.config.ts`
+
+```js
+ Unfonts({
+    custom: {
+        display: 'auto',
+        families: [
+            {
+                name: 'Gilroy',
+                src: './src/assets/fonts/Gilroy*',
+                local: 'Gilroy',
+                transform(font) {
+                    if (font.basename === 'Gilroy-Regular') font.weight = 400;
+                    if (font.basename === 'Gilroy-Medium') font.weight = 500;
+
+                    return font;
+                },
+            },
+        ],
+    },
+})
+```
+
 ## Expanding the ESLint configuration
 
 If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
