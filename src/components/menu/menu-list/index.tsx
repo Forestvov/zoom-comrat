@@ -1,111 +1,45 @@
+import { FC } from 'react';
 import clsx from 'clsx';
 
 import s from './menu-list.module.scss';
+import { ICategory, IItem } from 'interfaces/menu';
 
-const MenuList = () => {
+interface Props {
+    categories: ICategory[];
+    items: IItem[];
+    currentCategory: number;
+    selectCategoryId: (id: number) => void;
+}
+
+const MenuList: FC<Props> = ({ categories, items, currentCategory, selectCategoryId }) => {
     return (
         <div className={s.wrapper}>
             <div className={s.tabs}>
-                <button className={clsx(s.current)}>СУШИ</button>
-                <button>ПИЦЦА</button>
-                <button>ОРЕШКИ</button>
-                <button>ДЕСЕРТЫ</button>
+                {categories.map((category) => (
+                    <button
+                        className={clsx(category.menuCategoryId === currentCategory && s.current)}
+                        onClick={() => selectCategoryId(category.menuCategoryId)}
+                        key={category.menuCategoryId}
+                    >
+                        {category.value}
+                    </button>
+                ))}
             </div>
             <div className={s.title}>Закуски</div>
             <ul className={s.list}>
-                <li>
-                    <div className={s.item}>
-                        <div className={s.name}>Фисташки</div>
-                        <div className={s.del} />
-                        <div className={s.values}>
-                            <div className={s.value}>50 г</div>
-                            <div className={s.price}>120 mdl</div>
+                {items.map((item) => (
+                    <li key={item.menuItemId}>
+                        <div className={s.item}>
+                            <div className={s.name}>{item.menuItemLanguageValue}</div>
+                            <div className={s.del} />
+                            <div className={s.values}>
+                                <div className={s.value}>{item.menuItemSizeValue} г</div>
+                                <div className={s.price}>{item.price} mdl</div>
+                            </div>
                         </div>
-                    </div>
-                </li>
-                <li>
-                    <div className={s.item}>
-                        <div className={s.name}>Фисташки</div>
-                        <div className={s.del} />
-                        <div className={s.values}>
-                            <div className={s.value}>50 г</div>
-                            <div className={s.price}>120 mdl</div>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div className={s.item}>
-                        <div className={s.name}>Орешки</div>
-                        <div className={s.del} />
-                        <div className={s.values}>
-                            <div className={s.value}>50 г</div>
-                            <div className={s.price}>120 mdl</div>
-                        </div>
-                    </div>
-                    <div className={s.description}>в глазури из ликера и специй</div>
-                </li>
-                <li>
-                    <div className={s.item}>
-                        <div className={s.name}>Фисташки</div>
-                        <div className={s.del} />
-                        <div className={s.values}>
-                            <div className={s.value}>50 г</div>
-                            <div className={s.price}>120 mdl</div>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div className={s.item}>
-                        <div className={s.name}>Фисташки</div>
-                        <div className={s.del} />
-                        <div className={s.values}>
-                            <div className={s.value}>50 г</div>
-                            <div className={s.price}>120 mdl</div>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div className={s.item}>
-                        <div className={s.name}>Орешки</div>
-                        <div className={s.del} />
-                        <div className={s.values}>
-                            <div className={s.value}>50 г</div>
-                            <div className={s.price}>120 mdl</div>
-                        </div>
-                    </div>
-                    <div className={s.description}>в глазури из ликера и специй</div>
-                </li>
-                <li>
-                    <div className={s.item}>
-                        <div className={s.name}>Фисташки</div>
-                        <div className={s.del} />
-                        <div className={s.values}>
-                            <div className={s.value}>50 г</div>
-                            <div className={s.price}>120 mdl</div>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div className={s.item}>
-                        <div className={s.name}>Фисташки</div>
-                        <div className={s.del} />
-                        <div className={s.values}>
-                            <div className={s.value}>50 г</div>
-                            <div className={s.price}>120 mdl</div>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div className={s.item}>
-                        <div className={s.name}>Орешки</div>
-                        <div className={s.del} />
-                        <div className={s.values}>
-                            <div className={s.value}>50 г</div>
-                            <div className={s.price}>120 mdl</div>
-                        </div>
-                    </div>
-                    <div className={s.description}>в глазури из ликера и специй</div>
-                </li>
+                        {item.descriptions && <div className={s.description}>{item.descriptions}</div>}
+                    </li>
+                ))}
             </ul>
         </div>
     );

@@ -6,12 +6,51 @@
   border-bottom: 1px solid rgba(#fff, .5);
 }
 
+.drop {
+  margin: 0 20px 0 auto;
+  position: relative;
+}
+
+.list {
+  position: absolute;
+  left: -15px;
+  top: calc(100% + 10px);
+  background: #2D2C2C;
+  border: .5px solid rgba(#fff, .5);
+  border-radius: 10px;
+  padding: 10px;
+
+  button {
+    color: #fff;
+    padding: 0 5px;
+    font-family: 'SFProText', sans-serif;
+    font-size: 12px;
+    font-weight: 300;
+
+    & + button {
+      margin-top: 5px;
+    }
+  }
+}
+
 .lang {
-  margin: 0 25px 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 5px;
   text-transform: uppercase;
   font-family: 'SFProText', sans-serif;
   font-size: 14px;
   font-weight: 300;
+  width: 45px;
+
+  &.active svg {
+    transform: rotate(180deg);
+  }
+
+  svg {
+    transition: transform 400ms ease;
+    width: 10px;
+  }
 }
 
 .burger {

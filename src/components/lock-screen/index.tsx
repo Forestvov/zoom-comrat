@@ -3,8 +3,8 @@ import { animated, useSpring } from 'react-spring';
 
 import s from './lock-screen.module.scss';
 
-import Logo from '../../assets/start-logo.svg?react';
-import CircleArrow from '../../assets/circle-arrow.svg?react';
+import Logo from 'assets/start-logo.svg?react';
+import CircleArrow from 'assets/circle-arrow.svg?react';
 
 const SwipeableComponent: React.FC = () => {
     const [offset, setOffset] = useState<number>(0);

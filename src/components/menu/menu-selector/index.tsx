@@ -1,34 +1,29 @@
-import { useRef, useState } from 'react';
-import { animated, useSpring } from 'react-spring';
-
 import s from './menu-selector.module.scss';
 
-import Arrow from '../../../assets/drop-arrow.svg?react';
-import useOnOutsideClick from '../../../hooks/useOnOutsideClick.ts';
-
 const MenuSelector = () => {
-    const [isOpen, setIsOpen] = useState(false);
+    // const [isOpen, setIsOpen] = useState(false);
+    //
+    // const ref = useRef(null);
+    //
+    // useOnOutsideClick(ref, () => setIsOpen(false));
 
-    const ref = useRef(null);
-
-    useOnOutsideClick(ref, () => setIsOpen(false));
-
-    const animation = useSpring({
-        to: { opacity: isOpen ? 1 : 0 },
-    });
+    // const animation = useSpring({
+    //     to: { opacity: isOpen ? 1 : 0 },
+    //     from: { opacity: 0, pointEvents: 'none' },
+    // });
 
     return (
         <div className={s.wrapper}>
-            <div className={s.drop} ref={ref}>
-                <div className={s.head} onClick={() => setIsOpen(true)}>
+            <div className={s.drop}>
+                <div className={s.head}>
                     <span>ЗАКУСКИ</span>
-                    <Arrow />
+                    {/*<Arrow />*/}
                 </div>
-                <animated.div className={s.list} style={animation}>
-                    <button>Чаши и миксы</button>
-                    <button>БАР</button>
-                    <button>ИГРЫ</button>
-                </animated.div>
+                {/*<animated.div className={s.list} style={animation}>*/}
+                {/*    <button>Чаши и миксы</button>*/}
+                {/*    <button>БАР</button>*/}
+                {/*    <button>ИГРЫ</button>*/}
+                {/*</animated.div>*/}
             </div>
             <p className={s.text}>*количество представленных позиций и цены zoom могут отличаться в меньшую стороную</p>
         </div>
