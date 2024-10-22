@@ -37,7 +37,7 @@ pipeline {
             stage('Run docker container') {
                  steps {
                      script {
-                        sh("docker run -td --restart unless-stopped  --name zoom_f -p 5173:3000 zoom_f")
+                        sh("docker run -td --restart unless-stopped  --name zoom_f -p 80:3000 zoom_f")
                      }
                   }
              }
