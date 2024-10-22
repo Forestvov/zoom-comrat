@@ -23,6 +23,8 @@ const Menu = () => {
 
         if (id) {
             setLangId(Number(id));
+        } else {
+            setLangId(1);
         }
     }, []);
 
