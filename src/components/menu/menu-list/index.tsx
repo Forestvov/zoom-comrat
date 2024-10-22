@@ -34,7 +34,9 @@ const MenuList: FC<Props> = ({ categories, items, currentCategory, selectCategor
                             <div className={s.name}>{item.menuItemLanguageValue}</div>
                             <div className={s.del} />
                             <div className={s.values}>
-                                <div className={s.value}>{item.menuItemSizeValue}</div>
+                                <div className={s.value}>
+                                    {item.size} {item.menuItemSizeValue}
+                                </div>
                                 <div className={s.price}>{item.price} mdl</div>
                             </div>
                         </div>

@@ -16,6 +16,7 @@ export interface IItemsResponse {
 export interface IItem {
     id: number;
     price: number;
+    size: number;
     menuItemId: number;
     menuCategoryId: number;
     image: string;
