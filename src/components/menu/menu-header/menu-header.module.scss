@@ -7,7 +7,7 @@
 }
 
 .drop {
-  margin: 0 20px 0 auto;
+  margin: 0 0 0 auto;
   position: relative;
   z-index: 2;
 }
@@ -42,7 +42,7 @@
   font-family: 'SFProText', sans-serif;
   font-size: 14px;
   font-weight: 300;
-  width: 45px;
+  width: 35px;
 
   &.active svg {
     transform: rotate(180deg);

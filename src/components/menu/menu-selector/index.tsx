@@ -30,7 +30,7 @@ const MenuSelector: FC<Props> = ({ currentCategoryName }) => {
                 {/*    <button>ИГРЫ</button>*/}
                 {/*</animated.div>*/}
             </div>
-            <p className={s.text}>*количество представленных позиций и цены zoom могут отличаться в меньшую стороную</p>
+            {/*<p className={s.text}>*количество представленных позиций и цены zoom могут отличаться в меньшую стороную</p>*/}
         </div>
     );
 };

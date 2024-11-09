@@ -28,9 +28,14 @@ const Menu = () => {
         }
     }, []);
 
+    const changeLang = (idLage: number) => {
+        setLangId(idLage);
+        setCurrentCategory(null);
+    };
+
     return (
         <div className={s.menu} id="menu">
-            <MenuHeader setLang={setLangId} />
+            <MenuHeader setLang={changeLang} />
             <MenuSelector currentCategoryName={currentCategoryName} />
             <MenuList
                 currentCategoryName={currentCategoryName}

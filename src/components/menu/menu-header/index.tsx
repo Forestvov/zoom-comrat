@@ -66,10 +66,10 @@ const MenuHeader: FC<Props> = ({ setLang }) => {
                 </animated.div>
             </div>
 
-            <button className={s.burger}>
-                <div />
-                <div />
-            </button>
+            {/*<button className={s.burger}>*/}
+            {/*    <div />*/}
+            {/*    <div />*/}
+            {/*</button>*/}
         </div>
     );
 };
